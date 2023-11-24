@@ -13,9 +13,9 @@
         {{ system_message }}
     {% endif %}
     {% if message['role'] == 'user' %}
-        {{ '\n\nUser: ' + message['content'].strip() }}
+        {{ '\n\nUser: ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}
     {% elif message['role'] == 'assistant' %}
-        {{ '\n\nAssistant: ' + message['content'].strip() }}
+        {{ '\n\nAssistant: ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}
     {% endif %}
 {% endfor %}
 {% if add_generation_prompt %}
