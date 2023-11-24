@@ -15,7 +15,6 @@ from transformers import AutoTokenizer
 
 toker = AutoTokenizer.from_pretrained("huggyllama/llama-7b")
 messages = [
-    {'role': 'system', 'content': 'This is a system prompt.'},
     {'role': 'user', 'content': 'This is the first user input.'},
     {'role': 'assistant', 'content': 'This is the first assistant response.'},
     {'role': 'user', 'content': 'This is the second user input.'},
@@ -23,6 +22,7 @@ messages = [
 print('###### Default (but Improper) Chat Template ######')
 print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=True))
 print('###### Corrected Chat Template ######')
+toker.use_default_system_prompt = False
 chat_template = open('./chat_templates/llama.jinja').read()
 chat_template = chat_template.replace('    ', '').replace('\n', '')
 toker.chat_template = chat_template
@@ -32,13 +32,16 @@ print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=
 Expected output:
 
 ```
+###### Default (but Improper) Chat Template ######
 <s>[INST] <<SYS>>
-This is a system prompt.
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.
+
+If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information.
 <</SYS>>
 
-This is a first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
+This is the first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
 ###### Corrected Chat Template ######
-<s>This is a system prompt.
+<s>
 
 User: This is the first user input.
 
@@ -58,7 +61,6 @@ from transformers import AutoTokenizer
 
 toker = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf", token="YOUR_OWN_TOKEN")
 messages = [
-    {'role': 'system', 'content': 'This is a system prompt.'},
     {'role': 'user', 'content': 'This is the first user input.'},
     {'role': 'assistant', 'content': 'This is the first assistant response.'},
     {'role': 'user', 'content': 'This is the second user input.'},
@@ -66,6 +68,7 @@ messages = [
 print('###### Default (yet Correct) Chat Template ######')
 print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=True))
 print('###### Corrected Chat Template ######')
+messages = [{'role': 'system', 'content': 'This is a system prompt.'}] + messages
 chat_template = open('./chat_templates/llama-2-chat.jinja').read()
 chat_template = chat_template.replace('    ', '').replace('\n', '')
 toker.chat_template = chat_template
@@ -76,11 +79,7 @@ Expected output:
 
 ```
 ###### Default (yet Correct) Chat Template ######
-<s>[INST] <<SYS>>
-This is a system prompt.
-<</SYS>>
-
-This is the first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
+<s>[INST] This is the first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
 ###### Corrected Chat Template ######
 <s>[INST] <<SYS>>
 This is a system prompt.
@@ -103,6 +102,7 @@ messages = [
 print('###### Default (but Improper) Chat Template ######')
 print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=True))
 print('###### Corrected Chat Template ######')
+messages = [{'role': 'system', 'content': 'This is a system prompt.'}] + messages
 chat_template = open('./chat_templates/vicuna.jinja').read()
 chat_template = chat_template.replace('    ', '').replace('\n', '')
 toker.chat_template = chat_template
@@ -121,7 +121,7 @@ If a question does not make any sense, or is not factually coherent, explain why
 
 This is the first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
 ###### Corrected Chat Template ######
-A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: This is the first user input. ASSISTANT: This is the first assistant response.</s> USER: This is the second user input. ASSISTANT:
+This is a system prompt. USER: This is the first user input. ASSISTANT: This is the first assistant response.</s> USER: This is the second user input. ASSISTANT:
 ```
 
 ### Example 4: `falcon(-instruct)`
