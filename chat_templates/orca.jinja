@@ -10,14 +10,14 @@
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
     {% if loop.index0 == 0 %}
-        {{ bos_token + system_message.strip() }}
+        {{ '<|im_start|>system\n' + system_message.strip() + '<|im_end|>' }}
     {% endif %}
     {% if message['role'] == 'user' %}
-        {{ '\n\nUser: ' + message['content'].strip() }}
+        {{ '\n<|im_start|>user\n' + message['content'].strip() + '<|im_end|>' }}
     {% elif message['role'] == 'assistant' %}
-        {{ '\n\nAssistant: ' + message['content'].strip() }}
+        {{ '\n<|im_start|>assistant\n' + message['content'].strip() + '<|im_end|>' }}
     {% endif %}
 {% endfor %}
 {% if add_generation_prompt %}
-    {{ '\n\nAssistant:' }}
+    {{ '\n<|im_start|>assistant\n' }}
 {% endif %}

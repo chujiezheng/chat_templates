@@ -10,7 +10,7 @@
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
     {% if loop.index0 == 0 %}
-        {{ system_message }}
+        {{ system_message.strip() }}
     {% endif %}
     {% if message['role'] == 'user' %}
         {{ '\n\nUser: ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}

@@ -176,6 +176,8 @@ Assistant:
 | Model Family        | Template File        | Reference                                                    | Comment                                                      |
 | ------------------- | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `llama(-2)`         | `llama.jinja`        | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L514) | Since `llama(-2)` is not fine-tuned, we may use the same template as `claude` |
-| `llama-2-chat`      | `llama-2-chat.jinja` | [link](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template                                            |
+| `llama-2-chat`      | `llama-2-chat.jinja` | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template                                            |
 | `vicuna-v1.3/1.5`   | `vicuna.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L287) |                                                              |
 | `falcon(-instruct)` | `falcon.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675) |                                                              |
+| `orca-2` | `orca.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
+| `mistra`      | `mistra.jinja` | [link](https://docs.mistral.ai/usage/guardrailing) |  |
