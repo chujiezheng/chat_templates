@@ -12,11 +12,7 @@
     {% if loop.index0 == 0 %}
         {{ system_message.strip() }}
     {% endif %}
-    {% if message['role'] == 'user' %}
-        {{ '\n\nUser: ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}
-    {% elif message['role'] == 'assistant' %}
-        {{ '\n\nAssistant: ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}
-    {% endif %}
+    {{ '\n\n' + message['role'].title() + ': ' + message['content'].strip().replace('\r\n', '\n').replace('\n\n', '\n') }}
 {% endfor %}
 {% if add_generation_prompt %}
     {{ '\n\nAssistant:' }}

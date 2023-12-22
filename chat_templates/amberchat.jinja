@@ -1,6 +1,6 @@
 {% if messages[0]['role'] == 'system' %}
     {% set loop_messages = messages[1:] %}
-    {% set system_message = '<<SYS>>\n' + messages[0]['content'].strip() + '\n<</SYS>>\n\n' %}
+    {% set system_message = messages[0]['content'].strip() + '\n' %}
 {% else %}
     {% set loop_messages = messages %}
     {% set system_message = '' %}
@@ -10,13 +10,14 @@
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
     {% if loop.index0 == 0 %}
-        {% set content = system_message + message['content'] %}
-    {% else %}
-        {% set content = message['content'] %}
+        {{ bos_token + system_message }}
     {% endif %}
     {% if message['role'] == 'user' %}
-        {{ bos_token + '[INST] ' + content.strip() + ' [/INST]' }}
+        {{ '###Human: ' + message['content'].strip() + '\n' }}
     {% elif message['role'] == 'assistant' %}
-        {{ ' '  + content.strip() + ' ' + eos_token }}
+        {{ '###Assistant: ' + message['content'].strip() + '\n' }}
     {% endif %}
 {% endfor %}
+{% if add_generation_prompt %}
+    {{ '###Assistant:' }}
+{% endif %}
