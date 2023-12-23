@@ -179,7 +179,8 @@ Assistant:
 | `llama-2-chat`      | `llama-2-chat.jinja` | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template                                            |
 | `vicuna-v1.3/1.5`   | `vicuna.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L287) |                                                              |
 | `falcon(-instruct)` | `falcon.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675) |                                                              |
-| `orca-2` | `orca.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
+| `orca-2` | `chatml.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
 | `mistral`      | `mistral.jinja` | [link](https://docs.mistral.ai/usage/guardrailing) |  |
 | `openchat`      | `openchat.jinja` | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51) |  |
 | `amberchat`      | `amberchat.jinja` | [link](https://huggingface.co/LLM360/AmberChat) |  |
+| `yi-chat` | `chatml.jinja`       | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60) |  ChatML format   |
