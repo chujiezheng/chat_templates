@@ -5,6 +5,7 @@
     {% set loop_messages = messages %}
     {% set system_message = '' %}
 {% endif %}
+{{ bos_token }}
 {% for message in loop_messages %}
     {% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
@@ -15,7 +16,7 @@
         {% set content = message['content'] %}
     {% endif %}
     {% if message['role'] == 'user' %}
-        {{ bos_token + '[INST] ' + content.strip() + ' [/INST]' }}
+        {{ '[INST] ' + content.strip() + ' [/INST]' }}
     {% elif message['role'] == 'assistant' %}
         {{ ' '  + content.strip() + ' ' + eos_token }}
     {% endif %}
