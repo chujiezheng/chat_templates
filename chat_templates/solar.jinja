@@ -1,0 +1,15 @@
+{{ bos_token }}
+{% for message in messages %}
+    {% if message['role'] == 'system' %}
+        {% if message['content'] %}
+            {{ '### System:\n' + message['content'].strip() + '\n\n' }}
+        {% endif %}
+    {% elif message['role'] == 'user' %}
+        {{ '### User:\n' + message['content'].strip() + '\n\n' }}
+    {% elif message['role'] == 'assistant' %}
+        {{ '### Assistant:\n' + message['content'].strip() }}
+    {% endif %}
+{% endfor %}
+{% if add_generation_prompt %}
+    {{ '### Assistant:\n' }}
+{% endif %}

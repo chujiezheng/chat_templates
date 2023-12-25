@@ -182,5 +182,6 @@ Assistant:
 | `orca-2` | `chatml.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
 | `mistral`      | `mistral.jinja` | [link](https://docs.mistral.ai/usage/guardrailing) |  |
 | `openchat`      | `openchat.jinja` | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51) |  |
-| `amberchat`      | `amberchat.jinja` | [link](https://huggingface.co/LLM360/AmberChat) |  |
+| `amberchat`      | `amberchat.jinja` | [link](https://huggingface.co/LLM360/AmberChat) | AmberChat, AmberSafe |
 | `yi-chat` | `chatml.jinja`       | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60) |  ChatML format   |
+| `solar` | `solar.jinja`       | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/aac9da581d58d0ec8ae7146cc8f5d973569c49bc/tokenizer_config.json#L31) |  SOLAR-10.7B-Instruc   |
