@@ -10,7 +10,7 @@ If you find this repo useful, please kindly cite it:
 ```tex
 @misc{zheng-2023-chat-templates,
   author = {Zheng, Chujie},
-  title = {Chat Templates for HuggingFace Language Models},
+  title = {Chat Templates for HuggingFace Large Language Models},
   year = {2023},
   howpublished = {\url{https://github.com/chujiezheng/chat_templates}}
 }
@@ -56,6 +56,10 @@ This is the first user input. [/INST] This is the first assistant response. </s>
 
 ### Example 2: `vicuna`
 
+NOTE: In [fast-chat](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L287C3-L287C3), `vicuna` does not add linebreaks between roles' messages. But I found that adding linebreaks leads to a bit better performance (especially for the v1.5 version).
+
+Also, I found `vicuna-7/13/33b-v1.3` may not work well when given a system message different from its default one. So I would recommend to use `vicuna-7/13b-v1.5` instead.
+
 ```python
 from transformers import AutoTokenizer
 
@@ -87,7 +91,12 @@ If a question does not make any sense, or is not factually coherent, explain why
 
 This is the first user input. [/INST] This is the first assistant response. </s><s>[INST] This is the second user input. [/INST]
 ###### Corrected Chat Template ######
-This is a system prompt. USER: This is the first user input. ASSISTANT: This is the first assistant response.</s> USER: This is the second user input. ASSISTANT:
+This is a system prompt.
+
+USER: This is the first user input.
+ASSISTANT: This is the first assistant response.</s>
+USER: This is the second user input.
+ASSISTANT:
 ```
 
 ### Example 3: `falcon-instruct`
@@ -144,7 +153,7 @@ Assistant:
 | Model (Family)        | Template File        | Reference                                                    | Comment                                                      |
 | ------------------- | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `llama-2-chat`      | `llama-2-chat.jinja` | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template                                            |
-| `vicuna`   | `vicuna.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template) | `vicuna-7/13/33b-v1.3/1.5` |
+| `vicuna`   | `vicuna.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template) | `vicuna-7/13b-v1.5` |
 | `mistral-instruct` | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing) | `Mistral-7B-Instruct-v0.1/0.2` |
 | `openchat` | `openchat.jinja` | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51) |  |
 | `orca-2` | `chatml.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
