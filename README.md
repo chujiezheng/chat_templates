@@ -155,8 +155,9 @@ Assistant:
 | `llama-2-chat`      | `llama-2-chat.jinja` | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template                                            |
 | `vicuna`   | `vicuna.jinja`       | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template) | `vicuna-7/13b-v1.5` |
 | `mistral-instruct` | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing) | `Mistral-7B-Instruct-v0.1/0.2` |
+| `orca-2` | `chatml.jinja` | [link](https://huggingface.co/microsoft/Orca-2-7b) | ChatML format |
 | `openchat` | `openchat.jinja` | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51) |  |
-| `orca-2` | `chatml.jinja`       | [link](https://huggingface.co/microsoft/Orca-2-7b) |  ChatML format   |
+| `zephyr` | `zephyr.jinja` | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/blob/2ce2d025864af849b3e5029e2ec9d568eeda892d/tokenizer_config.json#L34) | `zephyr-7b-alpha/beta` |
 | `solar-instruct` | `solar-instruct.jinja` | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/aac9da581d58d0ec8ae7146cc8f5d973569c49bc/tokenizer_config.json#L31) | `SOLAR-10.7B-Instruct-v1.0` |
 | `yi-chat` | `chatml.jinja`       | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60) |  ChatML format   |
 | `amberchat`        | `amberchat.jinja`        | [link](https://huggingface.co/LLM360/AmberChat)              | `AmberChat`, `AmberSafe`       |
