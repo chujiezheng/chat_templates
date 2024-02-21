@@ -16,21 +16,34 @@ If you find this repo useful, please kindly cite it:
 }
 ```
 
+## Updates
+
+* **[02/2024]** Added support for Google's **<font color="red">Gemma</font>** models
+* **[02/2024]** Added usage explanation for **<font color="red">generation_configs</font>**.
+* **[01/2024]** Added support for **<font color="red">Qwen2</font>** models.
+
+## What are Contained in This Repo?
+
+- [`chat_templates`](/chat_templates/) contains the jinja files of collected chat templates, which can be directly replaced in the Huggingface tokenizers.
+
+- [`generation_configs`](/generation_configs/) contains the corresponding json configs used for controlling the ending of response generations. Specially, **the `stop_token_ids` should be directly passed into the `generatie` method by the `eos_token_ids` argument.**
+
 ## Supported Models
 
 | Model (Family)     | Template File            | Reference                                                    | Comment                        |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------ |
 | `llama-2-chat`     | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template              |
-| `mistral-instruct` | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing)           | `Mistral-7B-Instruct-v0.1/0.2` |
-| `qwen2-chat`           | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/c31f50d339b6fdd93a6364d731a0ddbaca9931f5/tokenizer_config.json#L31)           | ChatML format; `Qwen1.5-0.4/1.8/4/7/14/72B-Chat`  | |
+| `mistral-instruct` | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing)           | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
+| `gemma-it` **<font color="red">New</font>** | `gemma-it.jinja` | [link](https://huggingface.co/google/gemma-7b-it/blob/0750857c8befa414d62eeb8e91378849c62273e3/tokenizer_config.json#L59) | `gemma-2b/7b-it`<br/>**System message allowed** |
+| `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/c31f50d339b6fdd93a6364d731a0ddbaca9931f5/tokenizer_config.json#L31)           | ChatML format<br>`Qwen1.5-0.4/1.8/4/7/14/72B-Chat` |
 | `openchat`         | `openchat.jinja`         | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51) | `openchat-3.5`                 |
-| `yi-chat`          | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60) | ChatML format; `Yi-6/34B-Chat`|
-| `orca-2`           | `chatml.jinja`           | [link](https://huggingface.co/microsoft/Orca-2-7b)           | ChatML format; `Orca-2-7/13b`  |
-| `vicuna`           | `vicuna.jinja`           | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template) | `vicuna-7/13b-v1.5`
-| `zephyr`           | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/blob/2ce2d025864af849b3e5029e2ec9d568eeda892d/tokenizer_config.json#L34) | `zephyr-7b-alpha/beta`         |            |
+| `yi-chat`          | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60) | ChatML format<br/>`Yi-6/34B-Chat` |
+| `zephyr`           | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/blob/2ce2d025864af849b3e5029e2ec9d568eeda892d/tokenizer_config.json#L34) | `zephyr-7b-alpha/beta`         |
+| `orca-2`           | `chatml.jinja`           | [link](https://huggingface.co/microsoft/Orca-2-7b)           | ChatML format<br/>`Orca-2-7/13b` |
+| `vicuna`           | `vicuna.jinja`           | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template) | `vicuna-7/13b-v1.5`|
+| `falcon-instruct`  | `falcon-instruct.jinja`  | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675) | `falcon-7/40b-instruct`        |
 | `starling-lm`      | `openchat.jinja`         | [link](https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha/blob/f721e85293598f2ef774e483ae95343e39811577/tokenizer_config.json#L49) | `Starling-LM-7B-alpha`         |
 | `solar-instruct`   | `solar-instruct.jinja`   | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/aac9da581d58d0ec8ae7146cc8f5d973569c49bc/tokenizer_config.json#L31) | `SOLAR-10.7B-Instruct-v1.0`    |
-| `falcon-instruct`  | `falcon-instruct.jinja`  | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675) | `falcon-7/40b-instruct`        |
 | `amberchat`        | `amberchat.jinja`        | [link](https://huggingface.co/LLM360/AmberChat)              | `AmberChat`, `AmberSafe`       |
 
 ## Examples of Setting `chat_template`
@@ -77,7 +90,7 @@ This is the first user input. [/INST] This is the first assistant response. </s>
 
 ### Example 2: `mistral-instruct`
 
-For `mistral-instruct`, it does not natively support the `system` message, so passing the `system` message would raise error.
+For `mistral-instruct` (also `gemma-it`), it does not natively support the `system` message, so passing the `system` message would raise error.
 
 ```python
 from transformers import AutoTokenizer
