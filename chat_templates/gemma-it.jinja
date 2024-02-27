@@ -5,7 +5,7 @@
     {% set loop_messages = messages %}
     {% set system_message = '' %}
 {% endif %}
-{% for message in messages %}
+{% for message in loop_messages %}
     {% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
