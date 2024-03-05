@@ -19,7 +19,7 @@
     {% else %}
         {% set role = message['role'] %}
     {% endif %}
-    {{ '<start_of_turn>' + role + '\n' + message['content'].strip() + '<end_of_turn>\n' }}
+    {{ '<start_of_turn>' + role + '\n' + content.strip() + '<end_of_turn>\n' }}
 {% endfor %}
 {% if add_generation_prompt %}
     {{'<start_of_turn>model\n'}}
