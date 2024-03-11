@@ -26,7 +26,7 @@ If you find this repo useful, please kindly cite it:
 
 - [`chat_templates`](/chat_templates/) contains the jinja files of collected chat templates, which can be directly replaced in the Huggingface tokenizers.
 
-- [`generation_configs`](/generation_configs/) contains the corresponding json configs used for controlling the ending of response generations. Specially, **the `stop_token_ids` should be directly passed into the `generatie` method by the `eos_token_ids` argument.**
+- [`generation_configs`](/generation_configs/) contains the corresponding json configs used for controlling the ending of response generations. Specially, **the `stop_token_ids` should be directly passed into the `generate` method by the `eos_token_id` argument.**
 
 ## Supported Models
 
