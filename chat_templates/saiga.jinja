@@ -15,10 +15,9 @@
         {{ system_message }}
     {% endif %}
 
-    {% if message['role'] == 'user' %}
-        {{ bos_token + message['role'] + '\n' }}
-        {{ message['content'].strip() + eos_token + bos_token + 'bot' + '\n'}}
-    {% elif message['role'] == 'bot' %}
-        {{ message['content'].strip() + eos_token }}
+    {{ bos_token + message['role'] + '\n' + message['content'].strip() + eos_token }}
+
+    {% if loop.last and message['role'] == 'user' and add_generation_prompt %}
+        {{ bos_token + 'bot\n' }}
     {% endif %}
 {% endfor %}
