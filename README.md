@@ -44,6 +44,8 @@ If you find this repo useful, please kindly cite it:
 | `falcon-instruct`  | `falcon-instruct.jinja`  | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675) | `falcon-7/40b-instruct`        |
 | `starling-lm`      | `openchat.jinja`         | [link](https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha/blob/f721e85293598f2ef774e483ae95343e39811577/tokenizer_config.json#L49) | `Starling-LM-7B-alpha`         |
 | `solar-instruct`   | `solar-instruct.jinja`   | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/aac9da581d58d0ec8ae7146cc8f5d973569c49bc/tokenizer_config.json#L31) | `SOLAR-10.7B-Instruct-v1.0`    |
+| `alpaca`        | `alpaca.jinja`        | [link](https://github.com/tatsu-lab/stanford_alpaca)              | `alpaca`-style models, like 
+`Platypus2-13B`       |
 | `amberchat`        | `amberchat.jinja`        | [link](https://huggingface.co/LLM360/AmberChat)              | `AmberChat`, `AmberSafe`       |
 | `saiga`        | `saiga.jinja`        | [link](https://huggingface.co/IlyaGusev/saiga_mistral_7b_lora#saigamistral-7b-russian-mistral-based-chatbot)              | `saiga`, a series of Russian models       |
 
