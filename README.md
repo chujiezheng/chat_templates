@@ -32,7 +32,7 @@ If you find this repo useful, please kindly cite it:
 
 | Model (Family)     | Template File            | Reference                                                    | Comment                        |
 | ------------------ | ------------------------ | ------------------------------------------------------------ | ------------------------------ |
-| `llama-2-chat`     | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/e1ce257bd76895e0864f3b4d6c7ed3c4cdec93e2/tokenizer_config.json#L12) | Official template              |
+| `llama-2-chat`     | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/tokenizer_config.json#L12) | Official template              |
 | `mistral-instruct` | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing)           | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
 | `gemma-it` **<font color="red">New</font>** | `gemma-it.jinja` | [link](https://huggingface.co/google/gemma-7b-it/blob/0750857c8befa414d62eeb8e91378849c62273e3/tokenizer_config.json#L59) | `gemma-2b/7b-it`<br/>**System message allowed** |
 | `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/c31f50d339b6fdd93a6364d731a0ddbaca9931f5/tokenizer_config.json#L31)           | ChatML format<br>`Qwen1.5-0.4/1.8/4/7/14/72B-Chat` |
