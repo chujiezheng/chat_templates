@@ -9,7 +9,7 @@
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
     
-    {{ '<|' + message['role'] + '|>\n' + message['content'].strip() + eos_token }}
+    {{ '<|' + message['role'] + '|>\n' + message['content'].strip() + eos_token + '\n' }}
     
     {% if loop.last and message['role'] == 'user' and add_generation_prompt %}
         {{ '<|assistant|>\n' }}
