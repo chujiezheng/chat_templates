@@ -18,6 +18,6 @@
     {{ bos_token + message['role'] + '\n' + message['content'].strip() + eos_token }}
 
     {% if loop.last and message['role'] == 'user' and add_generation_prompt %}
-        {{ bos_token + 'bot\n' }}
+        {{ bos_token + 'bot' }}
     {% endif %}
 {% endfor %}
