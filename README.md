@@ -18,10 +18,11 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
+* **[04/2024]** Added support for Microsoft's **<font color="red">Phi-3</font>** models
 * **[04/2024]** Added support for Meta's **<font color="red">Llama-3</font>** models
 * **[02/2024]** Added support for Google's **<font color="red">Gemma</font>** models
-* **[02/2024]** Added usage explanation for **<font color="red">generation_configs</font>**.
-* **[01/2024]** Added support for **<font color="red">Qwen2</font>** models.
+* **[02/2024]** Added usage explanation for **<font color="red">generation_configs</font>**
+* **[01/2024]** Added support for Alibaba's **<font color="red">Qwen2</font>** models
 
 ## What are Contained in This Repo?
 
@@ -33,19 +34,20 @@ If you find this repo useful, please kindly cite it:
 
 | Model (Family)                                | Template File            | Reference                                                                                                                                 | Comment                        |
 |-----------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------ |
-| `llama-3-chat`                                | `llama-3-chat.jinja`     | [link](https://huggingface.co/NousResearch/Meta-Llama-3-8B/blob/main/tokenizer_config.json#L75)                                           | Official template              |
-| `llama-2-chat`                                | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/tokenizer_config.json#L12)                                          | Official template              |
+| `llama-3-chat` **<font color="red">New</font>** | `llama-3-chat.jinja`     | [link](https://huggingface.co/NousResearch/Meta-Llama-3-8B/blob/main/tokenizer_config.json#L75)                                           | Official template<br />`Meta-Llama-3-8B/70B-Instruct` |
+| `phi-3 ` **<font color="red">New</font>** | `zephyr.jinja` | [link](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct/blob/main/tokenizer_config.json#L338) | Official template<br />`Phi-3-mini-4k/128k-instruct` |
+| `gemma-it` **<font color="red">New</font>**   | `gemma-it.jinja`         | [link](https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L59)                 | `gemma-2b/7b-it`<br/>**System message allowed** |
+| `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/main/tokenizer_config.json#L31)              | ChatML format<br>`Qwen1.5-0.4B/1.8B/4B/7B/14B/72B-Chat` |
+| `llama-2-chat`                                | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/tokenizer_config.json#L12)                                          | Official template<br />`Llama-2-7b/13b/70b-chat-hf` |
 | `mistral-instruct`                            | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing)                                                                                        | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
-| `gemma-it` **<font color="red">New</font>**   | `gemma-it.jinja`         | [link](https://huggingface.co/google/gemma-7b-it/blob/0750857c8befa414d62eeb8e91378849c62273e3/tokenizer_config.json#L59)                 | `gemma-2b/7b-it`<br/>**System message allowed** |
-| `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/c31f50d339b6fdd93a6364d731a0ddbaca9931f5/tokenizer_config.json#L31)              | ChatML format<br>`Qwen1.5-0.4/1.8/4/7/14/72B-Chat` |
-| `openchat`                                    | `openchat.jinja`         | [link](https://huggingface.co/openchat/openchat_3.5/blob/99d59d4447dc8d46f4847b3cb147cbd3330ba31b/tokenizer_config.json#L51)              | `openchat-3.5`                 |
-| `yi-chat`                                     | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/36326f9bc1c8020e0cf29ea830ee5e6679a66a23/tokenizer_config.json#L60)                   | ChatML format<br/>`Yi-6/34B-Chat` |
-| `zephyr`                                      | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/blob/2ce2d025864af849b3e5029e2ec9d568eeda892d/tokenizer_config.json#L34)      | `zephyr-7b-alpha/beta`         |
-| `orca-2`                                      | `chatml.jinja`           | [link](https://huggingface.co/microsoft/Orca-2-7b)                                                                                        | ChatML format<br/>`Orca-2-7/13b` |
-| `vicuna`                                      | `vicuna.jinja`           | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template)                                       | `vicuna-7/13b-v1.5`|
-| `falcon-instruct`                             | `falcon-instruct.jinja`  | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675)                    | `falcon-7/40b-instruct`        |
-| `starling-lm`                                 | `openchat.jinja`         | [link](https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha/blob/f721e85293598f2ef774e483ae95343e39811577/tokenizer_config.json#L49) | `Starling-LM-7B-alpha`         |
-| `solar-instruct`                              | `solar-instruct.jinja`   | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/aac9da581d58d0ec8ae7146cc8f5d973569c49bc/tokenizer_config.json#L31)  | `SOLAR-10.7B-Instruct-v1.0`    |
+| `openchat`                                    | `openchat.jinja`         | [link](https://huggingface.co/openchat/openchat_3.5/blob/main/tokenizer_config.json#L51)              | `openchat-3.5`                 |
+| `zephyr`                                      | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/blob/main/tokenizer_config.json#L34)      | `zephyr-7b-alpha/beta`         |
+| `yi-chat`                                     | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/main/tokenizer_config.json#L60)                   | ChatML format<br/>`Yi-6B/34B-Chat` |
+| `orca-2`                                      | `chatml.jinja`           | [link](https://huggingface.co/microsoft/Orca-2-7b)                                                                                        | ChatML format<br/>`Orca-2-7b/13b` |
+| `vicuna`                                      | `vicuna.jinja`           | [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template)                                       | `vicuna-7b/13b-v1.5` |
+| `falcon-instruct`                             | `falcon-instruct.jinja`  | [link](https://github.com/lm-sys/FastChat/blob/d578599c69d060e6d40943f1b5b72af98956092a/fastchat/conversation.py#L675)                    | `falcon-7b/40b-instruct`       |
+| `starling-lm`                                 | `openchat.jinja`         | [link](https://huggingface.co/berkeley-nest/Starling-LM-7B-alpha/blob/main/tokenizer_config.json#L49) | `Starling-LM-7B-alpha/beta`         |
+| `solar-instruct`                              | `solar-instruct.jinja`   | [link](https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0/blob/main/tokenizer_config.json#L31)  | `SOLAR-10.7B-Instruct-v1.0`    |
 | `alpaca`                                      | `alpaca.jinja`           | [link](https://github.com/tatsu-lab/stanford_alpaca)                                                                                      | `alpaca`-style models, like `Platypus2-13B`       |
 | `amberchat`                                   | `amberchat.jinja`        | [link](https://huggingface.co/LLM360/AmberChat)                                                                                           | `AmberChat`, `AmberSafe`       |
 | `saiga`                                       | `saiga.jinja`            | [link](https://huggingface.co/IlyaGusev/saiga_mistral_7b_lora#saigamistral-7b-russian-mistral-based-chatbot)                              | `saiga`, a series of Russian models       |
