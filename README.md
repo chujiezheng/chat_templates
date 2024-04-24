@@ -221,3 +221,7 @@ ASSISTANT: This is the first assistant response.</s>
 USER: This is the second user input.
 ASSISTANT:
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=chujiezheng/chat_templates&type=Date)](https://star-history.com/#chujiezheng/chat_templates&Date)
