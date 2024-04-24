@@ -18,6 +18,7 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
+* **[04/2024]** Added support for Meta's **<font color="red">Llama-3</font>** models
 * **[02/2024]** Added support for Google's **<font color="red">Gemma</font>** models
 * **[02/2024]** Added usage explanation for **<font color="red">generation_configs</font>**.
 * **[01/2024]** Added support for **<font color="red">Qwen2</font>** models.
