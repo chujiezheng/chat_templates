@@ -21,6 +21,6 @@
     {% if message['role'] == 'user' %}
         {{ '[INST] ' + content.strip() + ' [/INST]' }}
     {% elif message['role'] == 'assistant' %}
-        {{ ' '  + content.strip() + ' ' + eos_token }}
+        {{ ' ' + content.strip() + eos_token }}
     {% endif %}
 {% endfor %}
