@@ -35,13 +35,13 @@ If you find this repo useful, please kindly cite it:
 
 | Model (Family)                                | Template File            | Reference                                                                                                                                 | Comment                        |
 |-----------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------ |
-| `llama-3-chat` **<font color="red">New</font>** | `llama-3-chat.jinja`     | [link](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/blob/main/tokenizer_config.json#L2053) | Official template<br />`Meta-Llama-3-8B/70B-Instruct` |
+| `llama-3-instruct` **<font color="red">New</font>** | `llama-3-instruct.jinja`     | [link](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/blob/main/tokenizer_config.json#L2053) | Official template<br />`Meta-Llama-3-8B/70B-Instruct` |
 | `phi-3` **<font color="red">New</font>** | `phi-3.jinja` | [link](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct/blob/main/tokenizer_config.json#L338) | Official template<br />`Phi-3-mini-4k/128k-instruct` |
 | `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/main/tokenizer_config.json#L31)              | ChatML format<br>`Qwen1.5-0.4B/1.8B/4B/7B/14B/72B-Chat` |
 | `gemma-it` **<font color="red">New</font>**   | `gemma-it.jinja`         | [link](https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L1507)                 | `gemma-2b/7b-it`<br/>**System message allowed** |
 | `chatqa` **<font color="red">New</font>** | `chatqa.jinja` | [link](https://huggingface.co/nvidia/Llama3-ChatQA-1.5-8B#when-context-is-available) | `Llama3-ChatQA-1.5-8B/70B`<br/>**Context message allowed** |
 | `llama-2-chat`                                | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/tokenizer_config.json#L12)                                          | Official template<br />`Llama-2-7b/13b/70b-chat-hf` |
-| `mistral-instruct`                            | `mistral-instruct.jinja` | [link](https://docs.mistral.ai/usage/guardrailing)                                                                                        | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
+| `mistral-instruct`                            | `mistral-instruct.jinja` | [link](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/blob/main/tokenizer_config.json#L42)                                                                                        | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
 | `openchat`                                    | `openchat.jinja`         | [link](https://huggingface.co/openchat/openchat_3.5/blob/main/tokenizer_config.json#L51)              | `openchat-3.5`                 |
 | `zephyr`                                      | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/blob/main/tokenizer_config.json#L34)      | `zephyr-7b-alpha/beta`         |
 | `yi-chat`                                     | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/main/tokenizer_config.json#L60)                   | ChatML format<br/>`Yi-6B/34B-Chat` |
@@ -56,14 +56,14 @@ If you find this repo useful, please kindly cite it:
 
 ## Examples of Setting `chat_template`
 
-### Example 1: `llama-3-chat`
+### Example 1: `llama-3-instruct`
 
 This example may check if the jinja file is correctly implemented.
 
 ```python
 from transformers import AutoTokenizer
 
-toker = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B", token="YOUR_OWN_TOKEN")
+toker = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct", token="YOUR_OWN_TOKEN")
 messages = [
     {'role': 'system', 'content': 'This is a system prompt.'},
     {'role': 'user', 'content': 'This is the first user input.'},
@@ -73,7 +73,7 @@ messages = [
 print('###### Default (yet Correct) Chat Template ######')
 print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=True))
 print('###### Corrected Chat Template ######')
-chat_template = open('./chat_templates/llama-3-chat.jinja').read()
+chat_template = open('./chat_templates/llama-3-instruct.jinja').read()
 chat_template = chat_template.replace('    ', '').replace('\n', '')
 toker.chat_template = chat_template
 print(toker.apply_chat_template(messages, tokenize=False, add_generation_prompt=True))
