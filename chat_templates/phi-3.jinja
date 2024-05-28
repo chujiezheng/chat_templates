@@ -4,14 +4,15 @@
     {% set offset = 0 %}
 {% endif %}
 
+{{ bos_token }}
 {% for message in messages %}
     {% if (message['role'] == 'user') != (loop.index0 % 2 == offset) %}
         {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
     {% endif %}
-    
-    {{ '<|' + message['role'] + '|>\n' + message['content'].strip() + '<|end|>' + '\n' }}
-    
-    {% if loop.last and message['role'] == 'user' and add_generation_prompt %}
-        {{ '<|assistant|>\n' }}
-    {% endif %}
+
+    {{ '<|' + message['role'] + '|>\n' + message['content'] | trim + '<|end|>' + '\n' }}
 {% endfor %}
+
+{% if add_generation_prompt %}
+    {{ '<|assistant|>\n' }}
+{% endif %}
