@@ -56,6 +56,8 @@ If you find this repo useful, please kindly cite it:
 
 ## Examples of Setting `chat_template`
 
+**Important note: ** as mentioned in [this issue](https://github.com/chujiezheng/chat_templates/issues/15), the `messages` should contain **at least one user message**. It is strongly not recommented to pass only the system message, as there may result in unexpected outputs (because the models are not trained in this way).
+
 ### Example 1: `llama-3-instruct`
 
 This example may check if the jinja file is correctly implemented.
