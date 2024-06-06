@@ -36,12 +36,13 @@ If you find this repo useful, please kindly cite it:
 | Model (Family)                                | Template File            | Reference                                                                                                                                 | Comment                        |
 |-----------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------ |
 | `llama-3-instruct` **<font color="red">New</font>** | `llama-3-instruct.jinja`     | [link](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/blob/main/tokenizer_config.json#L2053) | Official template<br />`Meta-Llama-3-8B/70B-Instruct` |
-| `phi-3` **<font color="red">New</font>** | `phi-3.jinja` | [link](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct/blob/main/tokenizer_config.json#L338) | Official template<br />`Phi-3-mini-4k/128k-instruct` |
 | `qwen2-chat` **<font color="red">New</font>** | `chatml.jinja`           | [link](https://huggingface.co/Qwen/Qwen1.5-72B-Chat/blob/main/tokenizer_config.json#L31)              | ChatML format<br>`Qwen1.5-0.4B/1.8B/4B/7B/14B/72B-Chat` |
+| `mistral-instruct` **<font color="red">New</font>** | `mistral-instruct.jinja` | [link](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/blob/main/tokenizer_config.json#L42)                                                                                        | `Mistral-7B-Instruct-v0.2/0.3`<br/>**System message allowed** |
+| `phi-3` **<font color="red">New</font>** | `phi-3.jinja` | [link](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct/blob/main/tokenizer_config.json#L338) | Official template<br />`Phi-3-mini-4k/128k-instruct` |
 | `gemma-it` **<font color="red">New</font>**   | `gemma-it.jinja`         | [link](https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L1507)                 | `gemma-2b/7b-it`<br/>**System message allowed** |
 | `chatqa` **<font color="red">New</font>** | `chatqa.jinja` | [link](https://huggingface.co/nvidia/Llama3-ChatQA-1.5-8B#when-context-is-available) | `Llama3-ChatQA-1.5-8B/70B`<br/>**Context message allowed** |
 | `llama-2-chat`                                | `llama-2-chat.jinja`     | [link](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/blob/main/tokenizer_config.json#L12)                                          | Official template<br />`Llama-2-7b/13b/70b-chat-hf` |
-| `mistral-instruct`                            | `mistral-instruct.jinja` | [link](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/blob/main/tokenizer_config.json#L42)                                                                                        | `Mistral-7B-Instruct-v0.1/0.2`<br/>**System message allowed** |
+| `mistral-instruct-v0.1` | `mistral-instruct-v0.1.jinja` | [link](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1/blob/main/tokenizer_config.json#L32) | `Mistral-7B-Instruct-v0.1`<br/>**System message allowed** |
 | `openchat`                                    | `openchat.jinja`         | [link](https://huggingface.co/openchat/openchat_3.5/blob/main/tokenizer_config.json#L51)              | `openchat-3.5`                 |
 | `zephyr`                                      | `zephyr.jinja`           | [link](https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/blob/main/tokenizer_config.json#L34)      | `zephyr-7b-alpha/beta`         |
 | `yi-chat`                                     | `chatml.jinja`           | [link](https://huggingface.co/01-ai/Yi-6B-Chat/blob/main/tokenizer_config.json#L60)                   | ChatML format<br/>`Yi-6B/34B-Chat` |
@@ -54,9 +55,11 @@ If you find this repo useful, please kindly cite it:
 | `amberchat`                                   | `amberchat.jinja`        | [link](https://huggingface.co/LLM360/AmberChat)                                                                                           | `AmberChat`, `AmberSafe`       |
 | `saiga`                                       | `saiga.jinja`            | [link](https://huggingface.co/IlyaGusev/saiga_mistral_7b_lora#saigamistral-7b-russian-mistral-based-chatbot)                              | `saiga`, a series of Russian models       |
 
+**Note:** `mistral-instruct-v0.1` is slightly different from `mistral-instruct` (for v0.2/0.3)
+
 ## Examples of Setting `chat_template`
 
-**Important note: ** as mentioned in [this issue](https://github.com/chujiezheng/chat_templates/issues/15), the `messages` should contain **at least one user message**. It is strongly not recommented to pass only the system message, as there may result in unexpected outputs (because the models are not trained in this way).
+**Important Note:** As mentioned in [this issue](https://github.com/chujiezheng/chat_templates/issues/15), the `messages` should contain **at least one user message**. It is strongly not recommented to pass only the system message, as there may result in unexpected outputs (because the models are not trained in this way).
 
 ### Example 1: `llama-3-instruct`
 

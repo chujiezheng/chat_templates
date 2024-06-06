@@ -14,6 +14,6 @@
     {% if message['role'] == 'user' %}
         {{ '[INST] ' + message['content'] | trim + ' [/INST]' }}
     {% elif message['role'] == 'assistant' %}
-        {{ message['content'] | trim + eos_token }}
+        {{ message['content'] | trim + eos_token + ' ' }}
     {% endif %}
 {% endfor %}
