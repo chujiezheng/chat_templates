@@ -12,12 +12,8 @@
   {% endif %}
 
   {% if message['role'] == 'user' %}
-    {{ 'USER: <image>' + message['content'] | trim + '\n' }}
+    {{ '[INST] <image>' + '\n' + message['content'] | trim + ' [/INST]' }}
   {% elif message['role'] == 'assistant' %}
-    {{ 'ASSISTANT: ' + message['content'] | trim + eos_token + '\n' }}
+    {{ message['content'] | trim + eos_token + '\n' }}
   {% endif %}
 {% endfor %}
-
-{% if add_generation_prompt %}
-  {{ 'ASSISTANT:' }}
-{% endif %}
