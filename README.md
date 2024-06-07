@@ -16,6 +16,57 @@ If you find this repo useful, please kindly cite it:
 }
 ```
 
+## Usage
+
+You can enumerate the templates using `importlib`:
+
+```python
+import importlib.resources
+import logging
+from importlib.abc import Traversable
+from pathlib import Path
+
+
+def known_chat_templates() -> dict:
+  try:
+    _chat_templates: Traversable
+    with importlib.resources.files("huggingface_extra_chat_templates") / "chat_templates" as _chat_templates:
+      return {Path(traversable.name).stem: traversable.read_text().replace('    ', '').replace('\n', '') for traversable
+              in _chat_templates.iterdir() if traversable.is_file()}
+
+  except ImportError as exc:
+    logging.warning(
+      f"Could not load extra chat templates, did you `pip install git+https://github.com/AppMana/appmana-comfyui-chat-templates.git` ?",
+      exc_info=exc)
+  return {}
+
+known_chat_templates()
+```
+
+In order to find a match, use both the `name_or_model` and the original configuration dictionary's `_name_or
+
+```python
+import logging
+
+from transformers import AutoTokenizer, PretrainedConfig, AutoModelForCausalLM
+
+model = AutoModelForCausalLM.from_pretrained(...)
+tokenizer = AutoTokenizer.from_pretrained(...)
+# Load from the config.json directly, because it will have the base model's name instead of the derived model's name,
+# improving the chances of finding a match.
+config_dict = PretrainedConfig.from_pretrained(...)
+chat_template = tokenizer.chat_template if hasattr(tokenizer, "chat_template") else None
+if chat_template is None:
+  candidate_chat_templates = [(name, template) for name, template in known_chat_templates() if
+                              name in config_dict["_name_or_path"] or name in model.name_or_path]
+  if len(candidate_chat_templates) > 0:
+    # todo: You decide which chat template may match in the event of multiple matches
+    filename, chat_template = candidate_chat_templates[0]
+    logging.debug(f"Selected chat template filename={filename} for {model.model.name_or_path}")
+```
+
+You are responsible for choosing which chat template to load for your model. Use this code for a heuristic approach; it is not possible to test all models that these templates are valid for.
+
 ## Updates
 
 * **[05/2024]** Added support for Nvidia's **<font color="red">ChatQA</font>** models
