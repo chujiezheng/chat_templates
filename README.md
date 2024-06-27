@@ -189,7 +189,7 @@ ASSISTANT:
 
 
 <details>
-  <summary><b>Llama-2-Chat, CodeLlama</b></summary>
+  <summary><b>Llama-2-Chat, CodeLlama-Instruct</b></summary>
 
 - Models: `meta-llama/Llama-2-7b-chat-hf`, `meta-llama/CodeLlama-7b-Instruct-hf`
 - Chat template: `chat_templates/llama-2-chat.jinja`
