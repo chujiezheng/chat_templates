@@ -14,12 +14,12 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
-* **[05/2024]** Added support for Nvidia's **<font color="red">ChatQA</font>** models
-* **[04/2024]** Added support for Microsoft's **<font color="red">Phi-3</font>** models
-* **[04/2024]** Added support for Meta's **<font color="red">Llama-3</font>** models
-* **[02/2024]** Added support for Google's **<font color="red">Gemma</font>** models
-* **[02/2024]** Added usage explanation for **<font color="red">generation_configs</font>**
-* **[01/2024]** Added support for Alibaba's **<font color="red">Qwen2</font>** models
+* **[05/2024]** Added support for Nvidia's **ChatQA** models
+* **[04/2024]** Added support for Microsoft's **Phi-3** models
+* **[04/2024]** Added support for Meta's **Llama-3** models
+* **[02/2024]** Added support for Google's **Gemma** models
+* **[02/2024]** Added usage explanation for **generation_configs**
+* **[01/2024]** Added support for Alibaba's **Qwen2** models
 
 ## What are Contained in This Repo?
 
@@ -234,18 +234,6 @@ ASSISTANT:
 
 
 <details>
-  <summary><b>gemma-it</b></summary>
-
-- Models: `google/gemma-7b-it`
-- Chat template: `chat_templates/gemma-it.jinja`
-- Generation config: `generation_configs/gemma-it.json`
-- Reference: https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L1507
-- Comment: **System message is acceptable**
-
-</details>
-
-
-<details>
   <summary><b>Yi-1.5-Chat, Yi-Chat</b></summary>
 
 - Models: `01-ai/Yi-1.5-6B-Chat`, `01-ai/Yi-6B-Chat`
@@ -257,12 +245,13 @@ ASSISTANT:
 
 
 <details>
-  <summary><b>Orca-2</b></summary>
+  <summary><b>gemma-it</b></summary>
 
-- Models: `microsoft/Orca-2-7b`
-- Chat template: `chat_templates/chatml.jinja`
-- Generation config: `generation_configs/orca-2.json`
-- Reference: https://huggingface.co/microsoft/Orca-2-7b
+- Models: `google/gemma-7b-it`
+- Chat template: `chat_templates/gemma-it.jinja`
+- Generation config: `generation_configs/gemma-it.json`
+- Reference: https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L1507
+- Comment: **System message is acceptable**
 
 </details>
 
@@ -304,10 +293,21 @@ ASSISTANT:
 <details>
   <summary><b>vicuna</b></summary>
 
-- Models: `vicuna-7b-v1.5`
+- Models: `vicuna-7b-v1.5`, `vicuna-7b-v1.3`
 - Chat template: `chat_templates/vicuna.jinja`
 - Generation config: `generation_configs/vicuna.json`
 - Reference: https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template
+
+</details>
+
+
+<details>
+  <summary><b>Orca-2</b></summary>
+
+- Models: `microsoft/Orca-2-7b`
+- Chat template: `chat_templates/chatml.jinja`
+- Generation config: `generation_configs/orca-2.json`
+- Reference: https://huggingface.co/microsoft/Orca-2-7b
 
 </details>
 
