@@ -1,5 +1,5 @@
 {
-    "chat_template": "chat_templates/openchat.jinja",
+    "chat_template": "chat_templates/openchat-3.5.jinja",
     "stop_str": null,
     "stop_token_ids": [2, 32000],
     "system_prompt": null
