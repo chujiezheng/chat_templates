@@ -158,7 +158,7 @@ For `mistral-instruct` (also `gemma-it`), it does not natively support the `syst
 ```python
 from transformers import AutoTokenizer
 
-toker = AutoTokenizer.from_pretrained("lmsys/vicuna-7b-v1.5")
+toker = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.3")
 messages = [
     {'role': 'system', 'content': 'This is a system prompt.'},
     {'role': 'user', 'content': 'This is the first user input.'},
