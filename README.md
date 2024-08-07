@@ -14,6 +14,8 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
+* **[07/2024]** Added support for Meta's **Llama-3.1** models
+* **[06/2024]** Added support for Google's **Gemma-2** models
 * **[05/2024]** Added support for Nvidia's **ChatQA** models
 * **[04/2024]** Added support for Microsoft's **Phi-3** models
 * **[04/2024]** Added support for Meta's **Llama-3** models
@@ -178,9 +180,9 @@ ASSISTANT:
 **NOTE:** The listed models are not inclusive and also include other-sized ones in the same model family
 
 <details>
-  <summary><b>Llama-3-Instruct</b></summary>
+  <summary><b>Llama-3-Instruct, Llama-3.1-Instruct</b></summary>
 
-- Models: `meta-llama/Meta-Llama-3-8B-Instruct`
+- Models: `meta-llama/Meta-Llama-3-8B-Instruct`, `meta-llama/Meta-Llama-3.1-8B-Instruct`
 - Chat template: `chat_templates/llama-3-instruct.jinja`
 - Generation config: `generation_configs/llama-3-instruct.json`
 - Reference: https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/blob/main/tokenizer_config.json#L2053
@@ -245,9 +247,9 @@ ASSISTANT:
 
 
 <details>
-  <summary><b>gemma-it</b></summary>
+  <summary><b>gemma-it, gemma-2-it</b></summary>
 
-- Models: `google/gemma-7b-it`
+- Models: `google/gemma-7b-it`, `google/gemma-2-9b-it`
 - Chat template: `chat_templates/gemma-it.jinja`
 - Generation config: `generation_configs/gemma-it.json`
 - Reference: https://huggingface.co/google/gemma-7b-it/blob/main/tokenizer_config.json#L1507
