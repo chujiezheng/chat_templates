@@ -180,9 +180,20 @@ ASSISTANT:
 **NOTE:** The listed models are not inclusive and also include other-sized ones in the same model family
 
 <details>
-  <summary><b>Llama-3-Instruct, Llama-3.1-Instruct</b></summary>
+  <summary><b>Llama-3.1-Instruct</b></summary>
 
-- Models: `meta-llama/Meta-Llama-3-8B-Instruct`, `meta-llama/Meta-Llama-3.1-8B-Instruct`
+- Models: `meta-llama/Meta-Llama-3.1-8B-Instruct`, `meta-llama/Meta-Llama-3.1-405B-Instruct-FP8`
+- Chat template: `chat_templates/llama-3-instruct.jinja`
+- Generation config: `generation_configs/llama-3.1-instruct.json`
+- Reference: https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
+
+</details>
+
+
+<details>
+  <summary><b>Llama-3-Instruct</b></summary>
+
+- Models: `meta-llama/Meta-Llama-3-8B-Instruct`
 - Chat template: `chat_templates/llama-3-instruct.jinja`
 - Generation config: `generation_configs/llama-3-instruct.json`
 - Reference: https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/blob/main/tokenizer_config.json#L2053
