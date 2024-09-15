@@ -19,9 +19,9 @@
     {% endif %}
 
     {% if message['role'] == 'user' %}
-        {{ '\n\nUser: ' + content | trim }}
+        {{ '\n\nUser: ' + message['content'] | trim }}
     {% elif message['role'] == 'assistant' %}
-        {{ '\n\nAssistant: '  + content | trim }}
+        {{ '\n\nAssistant: '  + message['content'] | trim }}
     {% endif %}
 {% endfor %}
 

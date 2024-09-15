@@ -10,9 +10,9 @@
     {% endif %}
 
     {% if message['role'] == 'assistant' %}
-        {{ set role = 'bot' }}
+        {% set role = 'bot' %}
     {% else %}
-        {{ set role = message['role'] }}
+        {% set role = message['role'] %}
     {% endif %}
 
     {{ bos_token + role + '\n' + message['content'] | trim + eos_token }}
