@@ -1,0 +1,6 @@
+{
+    "chat_template": "chat_templates/phi-3-small.jinja",
+    "stop_str": null,
+    "stop_token_ids": [100257, 100266],
+    "system_prompt": null
+}

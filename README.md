@@ -238,10 +238,11 @@ ASSISTANT:
 <details>
   <summary><b>Phi-3-Instruct</b></summary>
 
-- Models: `microsoft/Phi-3-mini-4k-instruct`
-- Chat template: `chat_templates/phi-3.jinja`
-- Generation config: `generation_configs/phi-3.json`
+- Models: `microsoft/Phi-3-mini-4k-instruct`, `microsoft/Phi-3-small-8k-instruct`
+- Chat template: `chat_templates/phi-3.jinja`, `chat_templates/phi-3-small.jinja`
+- Generation config: `generation_configs/phi-3.json`, `generation_configs/phi-3-small.json`
 - Reference: https://huggingface.co/microsoft/Phi-3-mini-128k-instruct/blob/main/tokenizer_config.json#L338
+- **Note:** `Phi-3-mini/medium` and `Phi-3-small` adopt different configs
 
 </details>
 
