@@ -184,8 +184,8 @@ ASSISTANT:
   <summary><b>granite-3.0-instruct</b></summary>
 
 - Models: `ibm-granite/granite-3.0-2b-instruct`, `ibm-granite/granite-3.0-8b-instruct`, `ibm-granite/granite-3.0-1b-a400m-instruct`, `ibm-granite/granite-3.0-3b-a800m-instruct`
-- Chat template: `chat_templates/granite-3-instruct.jinja`
-- Generation config: `generation_configs/granite-3-instruct.json`
+- Chat template: `chat_templates/granite-3.0-instruct.jinja`
+- Generation config: `generation_configs/granite-3.0-instruct.json`
 - Reference: https://huggingface.co/ibm-granite/granite-3.0-8b-instruct/blob/main/tokenizer_config.json#L188
 
 </details>
