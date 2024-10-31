@@ -14,6 +14,7 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
+* **[10/2024]** Added support for IBM's **Granite-3.0** models
 * **[07/2024]** Added support for Meta's **Llama-3.1** models
 * **[06/2024]** Added support for Google's **Gemma-2** models
 * **[05/2024]** Added support for Nvidia's **ChatQA** models
@@ -178,6 +179,16 @@ ASSISTANT:
 ## Supported Models
 
 **NOTE:** The listed models are not inclusive and also include other-sized ones in the same model family
+
+<details>
+  <summary><b>granite-3.0-instruct</b></summary>
+
+- Models: `ibm-granite/granite-3.0-2b-instruct`, `ibm-granite/granite-3.0-8b-instruct`, `ibm-granite/granite-3.0-1b-a400m-instruct`, `ibm-granite/granite-3.0-3b-a800m-instruct`
+- Chat template: `chat_templates/granite-3.0-instruct.jinja`
+- Generation config: `generation_configs/granite-3.0-instruct.json`
+- Reference: https://huggingface.co/ibm-granite/granite-3.0-8b-instruct/blob/main/tokenizer_config.json#L188
+
+</details>
 
 <details>
   <summary><b>Llama-3.1-Instruct</b></summary>
