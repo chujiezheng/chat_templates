@@ -195,10 +195,10 @@ ASSISTANT:
 <details>
   <summary><b>Llama-3.2-Instruct</b></summary>
 
-- Models: `meta-llama/Meta-Llama--3.2-1B-Instruct`
-- Chat template: `chat_templates/llama-3.2-instruct.jinja`
-- Generation config: `generation_configs/llama-3.2-instruct.json`
-- Reference: https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
+- Models: `meta-llama/Meta-Llama-3.2-1B-Instruct`, `meta-llama/Meta-Llama-3.2-3B-Instruct`
+- Chat template: `chat_templates/llama-3-instruct.jinja`
+- Generation config: `generation_configs/llama-3.1-instruct.json`
+- Reference: https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/blob/main/tokenizer_config.json#L2053
 
 </details>
 
@@ -209,7 +209,7 @@ ASSISTANT:
 - Models: `meta-llama/Meta-Llama-3.1-8B-Instruct`, `meta-llama/Meta-Llama-3.1-405B-Instruct-FP8`
 - Chat template: `chat_templates/llama-3-instruct.jinja`
 - Generation config: `generation_configs/llama-3.1-instruct.json`
-- Reference: https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
+- Reference: https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
 
 </details>
 
