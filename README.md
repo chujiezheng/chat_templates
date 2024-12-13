@@ -14,6 +14,7 @@ If you find this repo useful, please kindly cite it:
 
 ## Updates
 
+* **[11/2024]** Added support for Meta's **Llama-3.2** models
 * **[10/2024]** Added support for IBM's **Granite-3.0** models
 * **[07/2024]** Added support for Meta's **Llama-3.1** models
 * **[06/2024]** Added support for Google's **Gemma-2** models
@@ -190,13 +191,25 @@ ASSISTANT:
 
 </details>
 
+
+<details>
+  <summary><b>Llama-3.2-Instruct</b></summary>
+
+- Models: `meta-llama/Meta-Llama-3.2-1B-Instruct`, `meta-llama/Meta-Llama-3.2-3B-Instruct`
+- Chat template: `chat_templates/llama-3-instruct.jinja`
+- Generation config: `generation_configs/llama-3.1-instruct.json`
+- Reference: https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/blob/main/tokenizer_config.json#L2053
+
+</details>
+
+
 <details>
   <summary><b>Llama-3.1-Instruct</b></summary>
 
 - Models: `meta-llama/Meta-Llama-3.1-8B-Instruct`, `meta-llama/Meta-Llama-3.1-405B-Instruct-FP8`
 - Chat template: `chat_templates/llama-3-instruct.jinja`
 - Generation config: `generation_configs/llama-3.1-instruct.json`
-- Reference: https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
+- Reference: https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/blob/main/tokenizer_config.json#L2053
 
 </details>
 
