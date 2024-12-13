@@ -1,5 +1,7 @@
 # chat_templates
 
+**NOTICE: I may not update or maintain this repository actively, as I noticed that recent HF LLMs have usually implemented their chat templates in the `tokenizer_config.json` file. I am glad about this common practice and it will definitely facilitate out-of-box use of these powerful models.**
+
 This is a repository that includes proper chat templates (or input formats) for instruction-tuned large language models (LLMs), to support `transformers`'s `chat_template` [feature](https://huggingface.co/docs/transformers/chat_templating). If you are interested to include more chat templates, feel free to open a pull request
 
 If you find this repo useful, please kindly cite it:
